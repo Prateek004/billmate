@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Modal from "@/components/ui/Modal";
 import { useApp } from "@/lib/store/AppContext";
 import type { PaymentMethod } from "@/lib/types";
 import { fmtRupee, toP, QUICK_CASH } from "@/lib/utils";
-import { CheckCircle2, Banknote, Smartphone, CreditCard } from "lucide-react";
+import { CheckCircle2, Banknote, Smartphone, CreditCard, type LucideIcon } from "lucide-react";
 
 interface Props {
   open: boolean;
@@ -22,7 +22,7 @@ interface Props {
 interface PayMethod {
   id: PaymentMethod;
   label: string;
-  Icon: ({ size }: { size: number }) => React.ReactElement;
+  Icon: LucideIcon;
 }
 
 const PAY_METHODS: PayMethod[] = [
